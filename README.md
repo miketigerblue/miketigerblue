@@ -8,6 +8,8 @@ Welcome to my personal lab — a space where I explore cyber threat intelligence
 
 ### ⚒️ Current Projects
 
+![OSINT](OSINT.jpeg)
+
 - 🐾 **ThreatKitty** – AI-enhanced, gamified threat intelligence using Rivlet™ streams (Rust, Swift, MQTT)
 - 🧹 **Reverse-engineering the Eufy X1 Pro** – LiDAR, 3D mapping, and the thin line between convenience and surveillance
 - 📡 **PostgreSQL + Rust + MQTT** – Triggers as near-zero-cost event emitters in data pipelines

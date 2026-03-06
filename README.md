@@ -7,7 +7,11 @@
 
 > I build systems that sit at the ugly intersection of legacy protocols and modern AI — then make them production-grade.
 
-Thirty years across the infrastructure stack — starting as a founding technical contributor to Bermuda's first commercial ISP (**IBL**, 1994: .BM TLD hostmaster, DEC Alpha backbone, Bermuda's first secure online credit card systems). Rose to CTO at national carrier **Quantum Communications**, launching Bermuda's first metro-Ethernet service, CLEC interconnection, carrier-grade VoIP, and a national IP/MPLS backbone. At **QuoVadis**, designed and delivered a $10m Tier-III data centre from bare floor to PKI-grade production — Arista 7124SX MLAG, SolidFire all-SSD clusters, ZFS, HSMs, dark fibre rings, and a seamless migration of all PKI backend systems. Founded and ran **OnXis**, a boutique consultancy delivering IT/DR, incident response, and digital forensics for governments and enterprises across 13 years. First technical hire at cybersecurity start-up **deltaflare**, building DevSecOps pipelines, PKI microservices, and hardened real-time Linux kernels for factory edge appliances. Now at **Motion Applied**, leading rail connectivity engineering: porting the F1-derived **FleetConnect v3** stack from x86 to three-node ARM cluster, delivering North America's first rail-certified **Starlink SATCOM** deployments, and serving as ISO 27001/9001/14001 internal auditor and Security Champion.
+Started in 1986 as a teenager in **BerMUG** — Bermuda's Apple hackerspace, running a FirstClass BBS federated with global Mac user groups, meeting weekly at Admiralty House to explore networking and hardware. That early instinct to connect things became a career.
+
+Founding technical contributor to Bermuda's first commercial ISP (**IBL**, 1994: .BM TLD hostmaster, DEC Alpha backbone, Bermuda's first secure online credit card systems). Rose to CTO at national carrier **Quantum Communications**, launching Bermuda's first metro-Ethernet service, CLEC interconnection, carrier-grade VoIP, and a national IP/MPLS backbone. At **QuoVadis**, designed and delivered a $10m Tier-III data centre from bare floor to PKI-grade production — Arista 7124SX MLAG, SolidFire all-SSD clusters, ZFS, HSMs, dark fibre rings, and a seamless migration of all PKI backend systems. Founded and ran **OnXis**, a boutique security consultancy delivering IT/DR, incident response, and digital forensics for governments and enterprises across 13 years. First technical hire at cybersecurity start-up **deltaflare**, building DevSecOps pipelines, PKI microservices, and hardened real-time Linux kernels for factory edge appliances.
+
+Now at **Motion Applied**, leading rail connectivity engineering: porting the F1-derived **FleetConnect v3** stack from x86 to a three-node ARM cluster, delivering North America's first rail-certified **Starlink SATCOM** deployments, and serving as ISO 27001/9001/14001 internal auditor and Security Champion.
 
 These days I'm focused on a problem that shouldn't be hard: making cyber threat intelligence actually useful to the people who need to act on it — fast, auditable, and without a dashboard in sight.
 
@@ -108,9 +112,16 @@ The layering philosophy: Rust for foundations, **Go for control planes**, Python
 ![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-edge-A22846?style=flat-square&logo=raspberrypi&logoColor=white)
 ![Prometheus](https://img.shields.io/badge/Prometheus-metrics-E6522C?style=flat-square&logo=prometheus&logoColor=white)
 
-**Security**
+**Security & Intelligence**
 ![OSINT](https://img.shields.io/badge/OSINT-NVD%2FCISA%2FEPSS-orange?style=flat-square)
 ![CTI](https://img.shields.io/badge/CTI-threat--intelligence-red?style=flat-square)
+
+**Compliance & Audit**
+![ISO 27001](https://img.shields.io/badge/ISO-27001-blue?style=flat-square)
+![ISO 9001](https://img.shields.io/badge/ISO-9001-blue?style=flat-square)
+![ISO 14001](https://img.shields.io/badge/ISO-14001-green?style=flat-square)
+![NIST](https://img.shields.io/badge/NIST-CSF%2FSP800-lightgrey?style=flat-square)
+![NIS2](https://img.shields.io/badge/NIS2-compliance-lightgrey?style=flat-square)
 
 ---
 

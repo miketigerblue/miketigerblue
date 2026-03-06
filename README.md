@@ -15,7 +15,7 @@ Now at **Motion Applied**, leading rail connectivity engineering: porting the F1
 
 These days I'm focused on a problem that shouldn't be hard: making cyber threat intelligence actually useful to the people who need to act on it — fast, auditable, and without a dashboard in sight.
 
-The current stack is a vertically integrated CTI pipeline: **tigerfetch** (private Rust) ingests raw feeds into a PostgreSQL-backed OSINT platform; **L1**, an automated cyber analyst microservice, enriches each article with GPT-5-mini + RAG, producing structured threat assessments; **Number 2** reads that enriched output and clusters it into hourly SITREPs; and **Project Odin** delivers those SITREPs by voice over a SIP phone — a real analyst picking up a real handset and talking to an AI SOC analyst backed by live intelligence. **Tiger2Go** is the open-source Go port of tigerfetch.
+The current stack is a vertically integrated CTI pipeline: **tigerfetch** (Rust) ingests raw feeds into a PostgreSQL-backed OSINT platform; **L1**, an automated cyber analyst microservice, enriches each article with GPT-5-mini + RAG, producing structured threat assessments; **Number 2** reads that enriched output and clusters it into hourly SITREPs; and **Project Odin** delivers those SITREPs by voice over a SIP phone — a real analyst picking up a real handset and talking to an AI SOC analyst backed by live intelligence. **Tiger2Go** is the open-source Go port of tigerfetch.
 
 ---
 
@@ -33,7 +33,7 @@ The current stack is a vertically integrated CTI pipeline: **tigerfetch** (priva
 
 ### OSINT Platform + L1 Cyber Analyst
 
-**tigerfetch** (private Rust, `rust-feed-ingestor`) continuously ingests from **20 RSS/Atom feeds** (NCSC, CISA, JPCERT, MISP, BleepingComputer, Unit 42, Exploit-DB, and others) into a PostgreSQL OSINT platform. **L1** — the OSINT Enricher microservice — then acts as an automated cyber analyst: it reads each new article, retrieves top-3 semantically similar past analyses from ChromaDB (RAG), enriches using **GPT-5-mini**, and persists 17-field structured assessments — severity, confidence, CVEs, TTPs, IOCs, threat actors, target geographies, recommended actions — back to PostgreSQL and the vector store.
+**tigerfetch** (Rust) microservice continuously ingests from **20 RSS/Atom feeds** (NCSC, CISA, JPCERT, MISP, BleepingComputer, Unit 42, Exploit-DB, and others) into a PostgreSQL OSINT platform. **L1** — the OSINT Enricher microservice — then acts as an automated cyber analyst: it reads each new article, retrieves top-3 semantically similar past analyses from ChromaDB (RAG), enriches using **GPT-5-mini**, and persists 17-field structured assessments — severity, confidence, CVEs, TTPs, IOCs, threat actors, target geographies, recommended actions — back to PostgreSQL and the vector store.
 
 **Operational stats (102 days continuous service):** 3,103 enriched analyses · 4.5M EPSS daily scores · 1,240 hourly SITREPs generated · 2.4 GB database.
 
@@ -128,7 +128,7 @@ The layering philosophy: Rust for foundations, **Go for control planes**, Python
 ## 📊 GitHub Stats
 
 ![Mike's GitHub Stats](https://github-readme-stats.vercel.app/api?username=miketigerblue&show_icons=true&theme=dark&hide_border=true&count_private=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=miketigerblue&layout=compact&theme=dark&hide_border=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=miketigerblue&layout=compact&theme=dark&hide_border=true&count_private=true)
 
 ---
 

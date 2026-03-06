@@ -68,6 +68,8 @@ An automated, hourly cyber threat-intelligence SITREP pipeline. Every hour, Numb
 
 Runs on Fly.io via `supercronic`, with Pydantic v2 output validation throughout.
 
+→ [**Sample Report: Threat Landscape 26 Feb – 04 Mar 2026**](ODIN%20Threat%20Landscape%20Report%20%E2%80%94%2026%20Feb%20to%2004%20Mar%202026.pdf)
+
 ### [Tiger2Go](https://github.com/miketigerblue/tiger2go)
 
 An open-source Go port of **tigerfetch**, the private Rust ingestor at the core of the OSINT platform. The port direction is deliberate: the dominant problem in this system is not memory ownership, it's operational ingestion — high-volume I/O, untrusted inputs, concurrency, retries, and long-running process reliability. Go is simply the right shape for that.

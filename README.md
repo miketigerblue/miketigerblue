@@ -22,10 +22,10 @@ The current stack is a vertically integrated CTI pipeline: **tigerfetch** (priva
 
 | Project | Stack | Status |
 |---|---|---|
-| 🔵 **OSINT Platform + L1** | Python · PostgreSQL · ChromaDB · FastAPI · TypeScript · Neo4j · Fly.io | Active |
+| 🔵 **OSINT Platform + L1** | Python · PostgreSQL · ChromaDB · FastAPI · TypeScript · Fly.io | Active |
 | 🏛️ **Project Odin** | Asterisk · Twilio · Node.js · OpenAI Realtime · PostgREST · Fly.io | Active |
 | 2️⃣ **Number 2** | Python · PostgreSQL · pgvector · OpenAI · PostgREST · Fly.io | Active |
-| 🐯 **Tiger2Go** | Go · PostgreSQL · pgx · Prometheus · goose | Active |
+| 🐯 [**Tiger2Go**](https://github.com/miketigerblue/tiger2go) | Go · PostgreSQL · pgx · Prometheus · goose | Active |
 
 ### OSINT Platform + L1 Cyber Analyst
 
@@ -37,7 +37,6 @@ The current stack is a vertically integrated CTI pipeline: **tigerfetch** (priva
 - **FastAPI REST API** — 9 routers exposing analyses, CVE catalogue, EPSS data, and sitrep feeds
 - **[osint-enricher-mcp](https://github.com/miketigerblue/osint-enricher-mcp)** (TypeScript) — 8 tools consumed by VS Code Copilot, Claude Desktop, and GPT agents: `health_check`, `list_analysis`, `get_analysis`, `semantic_search`, `summarise_rss_feed`, `compare_cve_to_rss`, `get_cve_detail`, `get_raw_cve_detail`
 - **Frontend dashboards** — interactive analysis browser, cyber risk dashboards, geopolitical timelines, monthly reporting
-- **Neo4j knowledge graph** — ETL-fed graph of IOCs, threat actors, techniques, CVEs, CWEs, CPEs, and campaigns with hybrid Cypher + semantic query patterns
 - **Snow-Tiger** — delta export pipeline: PostgreSQL → S3 (Parquet) → Snowflake, with EPSS/KEV enrichment and SBOM ingestion (CycloneDX/SPDX)
 
 ### Project Odin
@@ -69,7 +68,7 @@ An automated, hourly cyber threat-intelligence SITREP pipeline. Every hour, Numb
 
 Runs on Fly.io via `supercronic`, with Pydantic v2 output validation throughout.
 
-### Tiger2Go
+### [Tiger2Go](https://github.com/miketigerblue/tiger2go)
 
 An open-source Go port of **tigerfetch**, the private Rust ingestor at the core of the OSINT platform. The port direction is deliberate: the dominant problem in this system is not memory ownership, it's operational ingestion — high-volume I/O, untrusted inputs, concurrency, retries, and long-running process reliability. Go is simply the right shape for that.
 
@@ -100,7 +99,6 @@ The layering philosophy: Rust for foundations, **Go for control planes**, Python
 ![pgvector](https://img.shields.io/badge/pgvector-embeddings-4169E1?style=flat-square)
 ![PostgREST](https://img.shields.io/badge/PostgREST-API-4169E1?style=flat-square)
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-vector--store-orange?style=flat-square)
-![Neo4j](https://img.shields.io/badge/Neo4j-knowledge--graph-008CC1?style=flat-square&logo=neo4j&logoColor=white)
 ![Snowflake](https://img.shields.io/badge/Snowflake-analytics-29B5E8?style=flat-square&logo=snowflake&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Fly.io](https://img.shields.io/badge/Fly.io-deploy-purple?style=flat-square)

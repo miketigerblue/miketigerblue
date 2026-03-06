@@ -15,7 +15,7 @@ Now at **Motion Applied**, leading rail connectivity engineering: porting the F1
 
 These days I'm focused on a problem that shouldn't be hard: making cyber threat intelligence actually useful to the people who need to act on it — fast, auditable, and without a dashboard in sight.
 
-The current stack is a vertically integrated CTI pipeline: **tigerfetch** (Rust) ingests raw feeds into a PostgreSQL-backed OSINT platform; **L1**, an automated cyber analyst microservice, enriches each article with GPT-5-mini + RAG, producing structured threat assessments; **Number 2** reads that enriched output and clusters it into hourly SITREPs; and **Project Odin** delivers those SITREPs by voice over a SIP phone — a real analyst picking up a real handset and talking to an AI SOC analyst backed by live intelligence. **Tiger2Go** is the open-source Go port of tigerfetch.
+The current stack is a vertically integrated CTI pipeline: **tigerfetch** (Rust) ingests raw feeds into a PostgreSQL-backed OSINT platform; **L1**, an automated cyber analyst microservice, enriches each article with GPT-5-mini + RAG, producing structured threat assessments; **Number 2** reads that enriched output and clusters it into hourly SITREPs; and **Project Odin** delivers those SITREPs by voice over a SIP phone — a real analyst picking up a real handset and talking to an AI SOC analyst backed by live intelligence. **Tiger2Go** is the open-source Go port of tigerfetch; **asterisk-twilio-pbx** is the open-source PBX + realtime bridge at the heart of Odin.
 
 ---
 
@@ -27,7 +27,7 @@ The current stack is a vertically integrated CTI pipeline: **tigerfetch** (Rust)
 | Project | Stack | Status |
 |---|---|---|
 | 🔵 **OSINT Platform + L1** | Python · PostgreSQL · ChromaDB · FastAPI · TypeScript · Fly.io | Active |
-| 🏛️ **Project Odin** | Asterisk · Twilio · Node.js · OpenAI Realtime · PostgREST · Fly.io | Active |
+| 🏛️ [**Project Odin**](https://github.com/miketigerblue/asterisk-twilio-pbx) | Asterisk · Twilio · Node.js · OpenAI Realtime · PostgREST · Fly.io | Active |
 | 2️⃣ **Number 2** | Python · PostgreSQL · pgvector · OpenAI · PostgREST · Fly.io | Active |
 | 🐯 [**Tiger2Go**](https://github.com/miketigerblue/tiger2go) | Go · PostgreSQL · pgx · Prometheus · goose | Active |
 
@@ -43,7 +43,7 @@ The current stack is a vertically integrated CTI pipeline: **tigerfetch** (Rust)
 - **Frontend dashboards** — interactive analysis browser, cyber risk dashboards, geopolitical timelines, monthly reporting
 - **Snow-Tiger** — delta export pipeline: PostgreSQL → S3 (Parquet) → Snowflake, with EPSS/KEV enrichment and SBOM ingestion (CycloneDX/SPDX)
 
-### Project Odin
+### [Project Odin](https://github.com/miketigerblue/asterisk-twilio-pbx)
 
 A vertically integrated voice AI system that turns a classic SIP PBX into a natural-language interface for a cyber threat-intelligence workflow. A human operator picks up a LAN phone, dials an extension, and reaches **ODIN** — an AI-powered SOC analyst that delivers real-time cyber SITREPs, looks up CVEs, and performs semantic threat searches, entirely by voice.
 
@@ -54,6 +54,8 @@ The architecture separates into two planes:
 **Threat-intel data plane (near-real-time, cached):** OSINT ingestion from RSS/Atom feeds + NVD/CISA KEV/EPSS enrichment → normalisation, severity tagging, and rolling 24h SITREP generation → served via **PostgREST** and the OSINT platform's semantic search API (ChromaDB). The bridge pre-fetches and caches SITREP context to keep first-audio latency bounded.
 
 Deployed to a **Raspberry Pi** (Asterisk in Docker, provisioned via Ansible) and **Fly.io** (bridge, PostgREST). Validated with real Wireshark captures, annotated live call transcripts, and an operational runbook.
+
+→ [**github.com/miketigerblue/asterisk-twilio-pbx**](https://github.com/miketigerblue/asterisk-twilio-pbx) — full source: PBX config, Ansible playbook, realtime bridge, Twilio Functions, RUNBOOK
 
 ### Number 2
 

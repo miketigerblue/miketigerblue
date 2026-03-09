@@ -5,9 +5,58 @@
 [![Blog](https://img.shields.io/badge/Blog-tigerblue.tech-informational?style=flat-square&logo=ghost)](https://tigerblue.tech)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-tigerblue-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/tigerblue)
 
-I build systems that turn noisy cyber signals into structured intelligence — often at the messy intersection of legacy infrastructure and modern AI.
 
-My work explores how automated pipelines, semantic clustering, and AI-assisted analysis can transform high-volume OSINT feeds into actionable threat intelligence.
+## Building an AI-Assisted Threat Intelligence Runtime
+
+Modern threat intelligence suffers from a signal-to-noise problem. Thousands of security events, vulnerabilities, and advisories appear daily across global sources, but analysts must transform these raw signals into actionable intelligence.
+
+To explore this problem, I built a distributed system that treats threat intelligence as a signal-processing pipeline.
+
+The system continuously ingests security feeds, enriches signals using AI analysis, clusters related events, and produces operational threat briefings that can be consumed by humans or automation.
+
+The goal is to explore how modern AI systems can operate as infrastructure components within real-world operational pipelines.
+
+### System Architecture
+
+![AI-Assisted Threat Intelligence](ai-pipeline.png)
+
+
+### Real-Time Voice Interface
+
+One of the system’s experimental interfaces is ODIN, a voice-driven SOC analyst.
+A SIP handset connects to an AI system capable of answering security questions and delivering threat briefings in real time.
+
+## Architecture:
+
+```
+LAN handset
+→ Asterisk PBX
+→ Twilio media bridge
+→ WebSocket streaming
+→ OpenAI realtime models
+```
+
+This allows analysts to retrieve intelligence using voice interaction rather than dashboards.
+
+Operational Characteristics
+The system runs continuously and processes high-volume security data streams.
+
+### Operational metrics so far:
+
+- 100+ days continuous runtime
+- 3,000+ AI-enriched threat analyses
+- 4.5 million EPSS records processed
+- 1,200+ automated threat SITREPs generated
+
+The stack currently runs across Fly.io infrastructure with PostgreSQL, vector search, and microservices written in Rust, Python, Go, and TypeScript.
+
+### Key Ideas Explored
+
+Treating intelligence as a signal-processing problem
+Combining deterministic scoring with LLM analysis
+Using vector search to cluster related threat signals
+Building conversational interfaces to operational systems
+
 
 > ### Note 
 >    The systems and experiments described here are independent research and personal projects built outside of my employment. They do not represent the work or systems of any current or former employer.
@@ -30,12 +79,11 @@ My work explores how automated pipelines, semantic clustering, and AI-assisted a
 *Clustering and scoring pipeline producing operational SITREPs for analysts and downstream systems.*
 
 
-
 I am building a vertically integrated cyber threat-intelligence pipeline designed to ingest raw security signals, enrich them with AI-assisted analysis, and deliver actionable intelligence outputs.
 
 The system treats threat intelligence as a signal-processing problem: ingest authoritative sources, enrich and cluster signals, then deliver intelligence outputs analysts can act on.
 
-The stack includes:
+### The stack includes:
 
 - **Tigerfetch (Rust)**: ingestion service collecting security feeds such as NCSC, CISA, JPCERT, MISP, Unit 42, Exploit-DB, and others into a PostgreSQL-backed OSINT platform.
 - **L1 Cyber Analyst**: AI enrichment pipeline using RAG + LLM analysis to produce structured threat assessments including CVEs, TTPs, actors, IOCs, and recommended actions.
@@ -43,7 +91,7 @@ The stack includes:
 - **Project Odin**: voice interface to the threat-intelligence pipeline, a SIP handset connected to an AI SOC analyst capable of delivering SITREPs and performing semantic searches in real time.
 - **Tiger2Go**: open-source Go implementation of the ingestion layer designed for high-volume concurrent OSINT ingestion.
 
-Operational metrics so far:
+### Operational metrics so far:
 
 - **100+ days** continuous operation
 - **3,000+** enriched threat analyses
@@ -178,8 +226,8 @@ Operational tooling includes Prometheus metrics and health endpoints.
 
 ## Philosophy
 
-Treating cyber threat intelligence as a signal-processing problem:
-collect authoritative signals → enrich with AI analysis → cluster patterns → deliver operational outputs.
+I treat intelligence and telemetry systems as signal-processing pipelines: ingest authoritative sources, enrich signals with AI analysis, cluster patterns, and deliver operational outputs
+
 
 
 ## Career Background

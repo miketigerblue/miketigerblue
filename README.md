@@ -252,13 +252,6 @@ Today I work at **Motion Applied**, engineering secure rail connectivity systems
 
 ---
 
-## GitHub Stats
-
-![Mike's GitHub Stats](https://github-readme-stats.vercel.app/api?username=miketigerblue&show_icons=true&theme=dark&hide_border=true&count_private=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=miketigerblue&layout=compact&theme=dark&hide_border=true&count_private=true)
-
----
-
 ## Get in Touch
 
 - **LinkedIn:** [linkedin.com/in/tigerblue](https://www.linkedin.com/in/tigerblue)

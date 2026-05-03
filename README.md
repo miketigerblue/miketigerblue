@@ -90,6 +90,7 @@ The system treats threat intelligence as a signal-processing problem: ingest aut
 - **Number 2**: clustering engine that groups enriched signals and generates hourly SITREPs using deterministic scoring based on CVSS, EPSS, KEV, and actor behaviour.
 - **Project Odin**: voice interface to the threat-intelligence pipeline, a SIP handset connected to an AI SOC analyst capable of delivering SITREPs and performing semantic searches in real time.
 - **Tiger2Go**: open-source Go implementation of the ingestion layer designed for high-volume concurrent OSINT ingestion.
+- **Tiger-Eye**: open-source pgvector-native enrichment service — the public reference implementation of the L1 Cyber Analyst pattern. Reads OSINT feed entries from the Tigerfetch / Tiger2Go database, runs RAG-augmented LLM analysis, and stores HNSW-indexed embeddings alongside structured analyses in Postgres.
 
 ### Operational metrics so far:
 
@@ -108,6 +109,7 @@ The system treats threat intelligence as a signal-processing problem: ingest aut
 | [**Project Odin**](https://github.com/miketigerblue/asterisk-twilio-pbx) | Asterisk · Twilio · Node.js · OpenAI Realtime · PostgREST · Fly.io | Active |
 | **Number 2** | Python · PostgreSQL · pgvector · OpenAI · PostgREST · Fly.io | Active |
 | [**Tiger2Go**](https://github.com/miketigerblue/tiger2go) | Go · PostgreSQL · pgx · Prometheus · goose | Active |
+| [**Tiger-Eye**](https://github.com/miketigerblue/tiger-eye) | Python · PostgreSQL · pgvector (HNSW) · OpenAI · LangChain · RAG | Active |
 
 ### OSINT Platform + L1
 
@@ -172,6 +174,37 @@ Capabilities include:
 
 Operational tooling includes Prometheus metrics and health endpoints.
 
+### [Tiger-Eye](https://github.com/miketigerblue/tiger-eye)
+
+Open-source pgvector-native enrichment service — the public reference implementation of the L1 Cyber Analyst pattern that runs internally in production.
+
+Tiger-Eye sits in the middle of the tiger ecosystem and pairs directly with **Tiger-Fetch** (the Rust private ingestor) or **Tiger2Go** (its open-source Go port):
+
+```
+┌──────────────────────────────┐        ┌──────────────────────────────────────┐
+│   Tiger-Fetch / Tiger2Go     │        │             Tiger-Eye                │
+│   (Rust / Go ingestor)       │  ───▶  │      (Python enrichment service)     │
+├──────────────────────────────┤        ├──────────────────────────────────────┤
+│  RSS / Atom feeds            │        │  RAG-augmented LLM analysis          │
+│  NVD JSON / CISA KEV / EPSS  │        │  CVEs · TTPs · actors · IOCs         │
+│  Single-binary, observable   │        │  HNSW vector index in pgvector       │
+│                              │        │  CVSS / EPSS / KEV joins             │
+│         shared PostgreSQL ───┼────────┼─── shared PostgreSQL                 │
+└──────────────────────────────┘        └──────────────────────────────────────┘
+```
+
+The two services communicate exclusively through the shared Postgres database — Tiger-Fetch / Tiger2Go writes raw entries; Tiger-Eye reads, enriches, and writes structured analyses + embeddings back. Either ingestor (Rust or Go) is a drop-in for the other; Tiger-Eye doesn't care which one populated the upstream tables.
+
+Capabilities include:
+
+- pgvector-native vector storage with HNSW indexing
+- structured analysis schema with CVSS / EPSS / KEV joins
+- RAG context window built from prior enrichments
+- batch + streaming enrichment modes
+- CI-tested pipeline with GitHub Actions
+
+This is the OSS reference architecture for "ingest → enrich" in the tiger ecosystem. The private L1 Cyber Analyst pipeline implements the same pattern with additional production-specific scoring and clustering logic that Number 2 then consumes downstream.
+
 ---
 
 ## Tech Stack
@@ -184,6 +217,22 @@ Operational tooling includes Prometheus metrics and health endpoints.
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
+
+### AI / Machine Learning
+
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-API%20%2B%20Realtime-412991?style=flat-square&logo=openai&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-orchestration-1C3C3C?style=flat-square)
+![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Transformers-FFD21E?style=flat-square)
+![Whisper](https://img.shields.io/badge/Whisper-ASR-412991?style=flat-square)
+![pyannote.audio](https://img.shields.io/badge/pyannote-diarisation-orange?style=flat-square)
+![RAG](https://img.shields.io/badge/RAG-vector--retrieval-lightgrey?style=flat-square)
+![CNN](https://img.shields.io/badge/CNN-vision-EE4C2C?style=flat-square)
+![SupCon](https://img.shields.io/badge/SupCon-contrastive--loss-EE4C2C?style=flat-square)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white)
+![MPS](https://img.shields.io/badge/Apple%20MPS-GPU%20accel-A2AAAD?style=flat-square&logo=apple&logoColor=white)
 
 ### Voice & Comms
 

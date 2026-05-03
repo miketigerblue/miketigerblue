@@ -217,6 +217,9 @@ This is the OSS reference architecture for "ingest → enrich" in the tiger ecos
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
+![HTML/CSS](https://img.shields.io/badge/HTML%2FCSS-E34F26?style=flat-square&logo=html5&logoColor=white)
 
 ### AI / Machine Learning
 
@@ -233,6 +236,30 @@ This is the OSS reference architecture for "ingest → enrich" in the tiger ecos
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
 ![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white)
 ![MPS](https://img.shields.io/badge/Apple%20MPS-GPU%20accel-A2AAAD?style=flat-square&logo=apple&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-Model%20Context%20Protocol-1C3C3C?style=flat-square)
+
+### Networking & Carrier
+
+![BGP](https://img.shields.io/badge/BGP-multi--AS%20routing-1B4F72?style=flat-square)
+![IP/MPLS](https://img.shields.io/badge/IP%2FMPLS-backbone-1B4F72?style=flat-square)
+![OSPF](https://img.shields.io/badge/OSPF-IGP-1B4F72?style=flat-square)
+![Metro Ethernet](https://img.shields.io/badge/Metro--Ethernet-carrier-1B4F72?style=flat-square)
+![CLEC](https://img.shields.io/badge/CLEC-interconnect-1B4F72?style=flat-square)
+![DNS / TLD](https://img.shields.io/badge/DNS-TLD%20%2F%20BIND-1B4F72?style=flat-square)
+![IPv6](https://img.shields.io/badge/IPv6-dual--stack-1B4F72?style=flat-square)
+![NetFlow](https://img.shields.io/badge/NetFlow%2FsFlow-telemetry-1B4F72?style=flat-square)
+![Wireshark](https://img.shields.io/badge/Wireshark-pcap-1679A7?style=flat-square&logo=wireshark&logoColor=white)
+
+### PKI & Cryptography
+
+![PKI](https://img.shields.io/badge/PKI-X.509%20%2F%20CA-003366?style=flat-square)
+![HSM](https://img.shields.io/badge/HSM-key%20management-003366?style=flat-square)
+![TLS / mTLS](https://img.shields.io/badge/TLS%2FmTLS-transport-003366?style=flat-square)
+![OpenSSL](https://img.shields.io/badge/OpenSSL-721412?style=flat-square&logo=openssl&logoColor=white)
+![JWT / JWKS](https://img.shields.io/badge/JWT-RS256%20%2F%20JWKS-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
+![SRTP](https://img.shields.io/badge/SRTP-media%20security-003366?style=flat-square)
+![1Password](https://img.shields.io/badge/1Password-vault-0094F5?style=flat-square&logo=1password&logoColor=white)
 
 ### Voice & Comms
 
@@ -253,16 +280,33 @@ This is the OSS reference architecture for "ingest → enrich" in the tiger ecos
 ![IONOS](https://img.shields.io/badge/IONOS-hosting-003D8F?style=flat-square)
 ![OVHcloud](https://img.shields.io/badge/OVHcloud-infrastructure-123F6D?style=flat-square)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
 ![Fly.io](https://img.shields.io/badge/Fly.io-deploy-purple?style=flat-square)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-Workers%20%2F%20D1-F38020?style=flat-square&logo=cloudflare&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=flat-square&logo=terraform&logoColor=white)
 ![Ansible](https://img.shields.io/badge/Ansible-IaC-EE0000?style=flat-square&logo=ansible&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![MQTT](https://img.shields.io/badge/MQTT-pub%2Fsub-660066?style=flat-square&logo=mqtt&logoColor=white)
 ![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-edge-A22846?style=flat-square&logo=raspberrypi&logoColor=white)
+![nginx](https://img.shields.io/badge/nginx-009639?style=flat-square&logo=nginx&logoColor=white)
 ![Prometheus](https://img.shields.io/badge/Prometheus-metrics-E6522C?style=flat-square&logo=prometheus&logoColor=white)
 ![Grafana](https://img.shields.io/badge/Grafana-metrics-E6522C?style=flat-square&logo=grafana&logoColor=white)
+![Loki](https://img.shields.io/badge/Loki-logs-E6522C?style=flat-square)
+![Linux](https://img.shields.io/badge/Linux-hardened-FCC624?style=flat-square&logo=linux&logoColor=black)
 
 ### Security & Intelligence
 
 ![OSINT](https://img.shields.io/badge/OSINT-NVD%2FCISA%2FEPSS-orange?style=flat-square)
 ![CTI](https://img.shields.io/badge/CTI-threat--intelligence-red?style=flat-square)
+![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-CC0000?style=flat-square)
+![STIX/TAXII](https://img.shields.io/badge/STIX%2FTAXII-CTI%20exchange-CC0000?style=flat-square)
+![MISP](https://img.shields.io/badge/MISP-threat--share-darkred?style=flat-square)
+![YARA](https://img.shields.io/badge/YARA-detection-darkred?style=flat-square)
+![Sigma](https://img.shields.io/badge/Sigma-detection-darkred?style=flat-square)
+![DFIR](https://img.shields.io/badge/DFIR-incident%20response-CC0000?style=flat-square)
+![SIEM](https://img.shields.io/badge/SIEM-log%20analytics-CC0000?style=flat-square)
+![ICS / OT](https://img.shields.io/badge/ICS%2FOT-security-FF6B35?style=flat-square)
+![DevSecOps](https://img.shields.io/badge/DevSecOps-shift--left-darkgreen?style=flat-square)
 
 ### Compliance & Audit
 
@@ -270,6 +314,9 @@ This is the OSS reference architecture for "ingest → enrich" in the tiger ecos
 ![ISO 9001](https://img.shields.io/badge/ISO-9001-blue?style=flat-square)
 ![ISO 14001](https://img.shields.io/badge/ISO-14001-green?style=flat-square)
 ![NIS2](https://img.shields.io/badge/NIS2-compliance-lightgrey?style=flat-square)
+![IEC 62443](https://img.shields.io/badge/IEC%2062443-OT%20security-FF6B35?style=flat-square)
+![GDPR](https://img.shields.io/badge/GDPR-data%20protection-blue?style=flat-square)
+![PCI DSS](https://img.shields.io/badge/PCI%20DSS-payment%20security-blue?style=flat-square)
 
 ---
 

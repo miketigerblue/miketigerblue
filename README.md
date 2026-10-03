@@ -41,12 +41,14 @@ This allows analysts to retrieve intelligence using voice interaction rather tha
 Operational Characteristics
 The system runs continuously and processes high-volume security data streams.
 
-### Operational metrics so far:
+### Operational metrics (as of 2 October 2026):
 
-- 100+ days continuous runtime
-- 3,000+ AI-enriched threat analyses
-- 4.5 million EPSS records processed
-- 1,200+ automated threat SITREPs generated
+- In continuous operation since September 2025
+- 19,000+ AI-enriched threat analyses, each with a stored embedding
+- 400,000+ CVEs tracked and enriched across NVD, CISA KEV, OSV and GHSA, with 1.2M recorded state changes
+- 199M EPSS daily score rows ingested
+- 2,200+ threat actors and 540+ malware families canonicalised
+- Hourly automated SITREPs and convergence alerts
 
 The stack currently runs across Fly.io infrastructure with PostgreSQL, vector search, and microservices written in Rust, Python, Go, and TypeScript.
 
@@ -92,12 +94,14 @@ The system treats threat intelligence as a signal-processing problem: ingest aut
 - **Tiger2Go**: open-source Go implementation of the ingestion layer designed for high-volume concurrent OSINT ingestion.
 - **Tiger-Eye**: open-source pgvector-native enrichment service — the public reference implementation of the L1 Cyber Analyst pattern. Reads OSINT feed entries from the Tigerfetch / Tiger2Go database, runs RAG-augmented LLM analysis, and stores HNSW-indexed embeddings alongside structured analyses in Postgres.
 
-### Operational metrics so far:
+### Operational metrics (as of 2 October 2026):
 
-- **100+ days** continuous operation
-- **3,000+** enriched threat analyses
-- **4.5M** EPSS records processed
-- **1,200+** automated SITREPs generated
+- **In continuous operation** since September 2025
+- **19,000+** AI-enriched threat analyses
+- **400,000+** CVEs tracked across NVD, CISA KEV, OSV and GHSA
+- **199M** EPSS daily score rows ingested
+- **2,200+** threat actors and **540+** malware families canonicalised
+- **Hourly** automated SITREPs
 
 ---
 

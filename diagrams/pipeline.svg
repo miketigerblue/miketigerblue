@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1690 700" font-family='Helvetica, Arial, "Liberation Sans", sans-serif' font-size="15" fill="#000">
+<defs>
+<filter id="sh" x="-5%" y="-5%" width="115%" height="125%"><feDropShadow dx="1.5" dy="3" stdDeviation="2.2" flood-color="#000" flood-opacity=".28"/></filter>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker>
+<marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1F4FD8"/></marker>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E03A1E"/></marker>
+</defs>
+<rect width="1690" height="700" fill="#fff"/>
+<text x="20" y="36" text-anchor="start" font-size="24" fill="#000" font-weight="bold">AI-Assisted Threat Intelligence Pipeline</text>
+<text x="20" y="60" text-anchor="start" font-size="15" fill="#000">feeds, ingestion, AI enrichment, clustering and scoring, hourly SITREP</text>
+<text x="135.0" y="88" text-anchor="middle" font-size="19" fill="#000">Sources</text>
+<text x="410.0" y="88" text-anchor="middle" font-size="19" fill="#000">Ingest</text>
+<text x="945.0" y="88" text-anchor="middle" font-size="19" fill="#000">Enrich</text>
+<text x="1261.0" y="88" text-anchor="middle" font-size="19" fill="#000">Cluster + Score</text>
+<text x="1551.0" y="88" text-anchor="middle" font-size="19" fill="#000">Deliver</text>
+<text x="648" y="88" text-anchor="middle" font-size="19" fill="#000">Store</text>
+<rect x="20" y="102" width="230" height="54" rx="10" fill="#FFFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="135.0" y="124.9" text-anchor="middle" font-size="15" font-weight="bold">RSS / Atom</text>
+<text x="135.0" y="143.6" text-anchor="middle" font-size="13">22 security feeds</text>
+<path d="M250 129 L292 129" fill="none" stroke="#000" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="20" y="168" width="230" height="54" rx="10" fill="#FFFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="135.0" y="190.9" text-anchor="middle" font-size="15" font-weight="bold">NVD</text>
+<text x="135.0" y="209.6" text-anchor="middle" font-size="13">CVE detail, v2.0 API</text>
+<path d="M250 195 L292 195" fill="none" stroke="#000" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="20" y="234" width="230" height="54" rx="10" fill="#FFFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="135.0" y="256.9" text-anchor="middle" font-size="15" font-weight="bold">CISA KEV</text>
+<text x="135.0" y="275.6" text-anchor="middle" font-size="13">exploited in the wild</text>
+<path d="M250 261 L292 261" fill="none" stroke="#000" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="20" y="300" width="230" height="54" rx="10" fill="#FFFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="135.0" y="322.9" text-anchor="middle" font-size="15" font-weight="bold">EPSS</text>
+<text x="135.0" y="341.6" text-anchor="middle" font-size="13">~300k scores / day</text>
+<path d="M250 327 L292 327" fill="none" stroke="#000" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="20" y="366" width="230" height="54" rx="10" fill="#FFFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="135.0" y="388.9" text-anchor="middle" font-size="15" font-weight="bold">OSV + GHSA</text>
+<text x="135.0" y="407.6" text-anchor="middle" font-size="13">supply-chain advisories</text>
+<path d="M250 393 L292 393" fill="none" stroke="#000" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="20" y="432" width="230" height="54" rx="10" fill="#FFFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="135.0" y="454.9" text-anchor="middle" font-size="15" font-weight="bold">Nuclei · Metasploit</text>
+<text x="135.0" y="473.6" text-anchor="middle" font-size="13">exploit availability</text>
+<path d="M250 459 L292 459" fill="none" stroke="#000" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="20" y="498" width="230" height="54" rx="10" fill="#FFFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="135.0" y="520.9" text-anchor="middle" font-size="15" font-weight="bold">abuse.ch</text>
+<text x="135.0" y="539.6" text-anchor="middle" font-size="13">URLhaus · ThreatFox · Bazaar</text>
+<path d="M250 525 L292 525" fill="none" stroke="#000" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="292" y="102" width="236" height="450" rx="14" fill="#F4FFF4" stroke="#57C84D" stroke-width="3"/>
+<rect x="310" y="120" width="200" height="74" rx="10" fill="#CCFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="410.0" y="141.7" text-anchor="middle" font-size="17" font-weight="bold">TigerFetch</text>
+<text x="410.0" y="162.9" text-anchor="middle" font-size="15">Tiger2Go</text>
+<text x="410.0" y="184.2" text-anchor="middle" font-size="15">Rust · Go, single binary</text>
+<rect x="310" y="212" width="200" height="40" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="410.0" y="236.9" text-anchor="middle" font-size="14">concurrent workers</text>
+<rect x="310" y="264" width="200" height="40" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="410.0" y="288.9" text-anchor="middle" font-size="14">rate limit · retry · backoff</text>
+<rect x="310" y="316" width="200" height="40" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="410.0" y="340.9" text-anchor="middle" font-size="14">sanitise · validate</text>
+<rect x="310" y="368" width="200" height="40" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="410.0" y="392.9" text-anchor="middle" font-size="14">idempotent · dedupe</text>
+<rect x="310" y="420" width="200" height="40" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="410.0" y="444.9" text-anchor="middle" font-size="14">embedded migrations</text>
+<rect x="310" y="484" width="200" height="52" rx="10" fill="#FFCCCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="410.0" y="506.1" text-anchor="middle" font-size="14" font-weight="bold">Sleeper-CVE alert</text>
+<text x="410.0" y="523.6" text-anchor="middle" font-size="12">EPSS &lt;10% to ≥50%</text>
+<g filter="url(#sh)"><path d="M578 230 v182 a70.0 14 0 0 0 140 0 v-182 a70.0 14 0 0 0 -140 0z" fill="#CCCCFF" stroke="#000" stroke-width="1.6"/><ellipse cx="648.0" cy="230" rx="70.0" ry="14" fill="#CCCCFF" stroke="#000" stroke-width="1.6"/></g>
+<text x="648.0" y="277.0" text-anchor="middle" font-size="15" font-weight="bold">PostgreSQL</text>
+<text x="648.0" y="295.8" text-anchor="middle" font-size="13">+ pgvector</text>
+<text x="648.0" y="314.5" text-anchor="middle" font-size="13"></text>
+<text x="648.0" y="333.2" text-anchor="middle" font-size="13">archive</text>
+<text x="648.0" y="352.0" text-anchor="middle" font-size="13">cve_enriched</text>
+<text x="648.0" y="370.8" text-anchor="middle" font-size="13">epss_daily</text>
+<text x="648.0" y="389.5" text-anchor="middle" font-size="13">cve_kev</text>
+<path d="M528 321 L576 321" fill="none" stroke="#000" stroke-width="2.4" marker-end="url(#ar)"/>
+<rect x="810" y="102" width="270" height="450" rx="14" fill="#FFF5F5" stroke="#E0605A" stroke-width="3"/>
+<rect x="830" y="120" width="230" height="74" rx="10" fill="#FFCCCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="945.0" y="141.7" text-anchor="middle" font-size="17" font-weight="bold">Tiger-Eye</text>
+<text x="945.0" y="162.9" text-anchor="middle" font-size="15">L1 Cyber Analyst</text>
+<text x="945.0" y="184.2" text-anchor="middle" font-size="15">Python, async loop</text>
+<rect x="830" y="212" width="230" height="54" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="945.0" y="235.2" text-anchor="middle" font-size="14" font-weight="bold">RAG retrieval</text>
+<text x="945.0" y="252.7" text-anchor="middle" font-size="12">pgvector HNSW, recency re-rank</text>
+<path d="M945 266 L945 278" fill="none" stroke="#000" stroke-width="1.2" marker-end="url(#ar)"/>
+<rect x="830" y="278" width="230" height="54" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="945.0" y="301.1" text-anchor="middle" font-size="14" font-weight="bold">NVD context lookup</text>
+<text x="945.0" y="318.6" text-anchor="middle" font-size="12">live CVSS / EPSS for cited CVEs</text>
+<path d="M945 332 L945 344" fill="none" stroke="#000" stroke-width="1.2" marker-end="url(#ar)"/>
+<rect x="830" y="344" width="230" height="54" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="945.0" y="367.1" text-anchor="middle" font-size="14" font-weight="bold">LLM analysis</text>
+<text x="945.0" y="384.6" text-anchor="middle" font-size="12">strict JSON schema, 21 fields</text>
+<path d="M945 398 L945 410" fill="none" stroke="#000" stroke-width="1.2" marker-end="url(#ar)"/>
+<rect x="830" y="410" width="230" height="54" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="945.0" y="433.1" text-anchor="middle" font-size="14" font-weight="bold">Normalise</text>
+<text x="945.0" y="450.6" text-anchor="middle" font-size="12">ATT&amp;CK IDs, actor aliases</text>
+<path d="M945 464 L945 476" fill="none" stroke="#000" stroke-width="1.2" marker-end="url(#ar)"/>
+<rect x="830" y="476" width="230" height="54" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="945.0" y="499.1" text-anchor="middle" font-size="14" font-weight="bold">Persist</text>
+<text x="945.0" y="516.6" text-anchor="middle" font-size="12">analysis + embedding, one txn</text>
+<path d="M720 286 L808 286" fill="none" stroke="#1F4FD8" stroke-width="2.2" marker-end="url(#arb)"/>
+<text x="764" y="262" text-anchor="middle" font-size="12.5" fill="#1F4FD8">LISTEN /</text>
+<text x="764" y="277" text-anchor="middle" font-size="12.5" fill="#1F4FD8">NOTIFY</text>
+<path d="M808 376 L722 376" fill="none" stroke="#E03A1E" stroke-width="2.2" marker-end="url(#arr)"/>
+<text x="764" y="395" text-anchor="middle" font-size="12.5" fill="#E03A1E">analyses +</text>
+<text x="764" y="410" text-anchor="middle" font-size="12.5" fill="#E03A1E">embeddings</text>
+<rect x="1130" y="102" width="262" height="450" rx="14" fill="#F2FFFF" stroke="#3CCFE0" stroke-width="3"/>
+<rect x="1150" y="120" width="222" height="74" rx="10" fill="#CCFFFF" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="1261.0" y="141.7" text-anchor="middle" font-size="17" font-weight="bold">Number 2</text>
+<text x="1261.0" y="162.9" text-anchor="middle" font-size="15">SITREP engine</text>
+<text x="1261.0" y="184.2" text-anchor="middle" font-size="15">Python · pgvector</text>
+<rect x="1150" y="212" width="222" height="54" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="1261.0" y="235.2" text-anchor="middle" font-size="14" font-weight="bold">Extraction</text>
+<text x="1261.0" y="252.7" text-anchor="middle" font-size="12">schema-validated intel objects</text>
+<path d="M1261 266 L1261 278" fill="none" stroke="#000" stroke-width="1.2" marker-end="url(#ar)"/>
+<rect x="1150" y="278" width="222" height="54" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="1261.0" y="301.1" text-anchor="middle" font-size="14" font-weight="bold">Embedding cache</text>
+<text x="1261.0" y="318.6" text-anchor="middle" font-size="12">no recomputation</text>
+<path d="M1261 332 L1261 344" fill="none" stroke="#000" stroke-width="1.2" marker-end="url(#ar)"/>
+<rect x="1150" y="344" width="222" height="54" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="1261.0" y="367.1" text-anchor="middle" font-size="14" font-weight="bold">Hybrid clustering</text>
+<text x="1261.0" y="384.6" text-anchor="middle" font-size="12">cosine + shared CVE / actor</text>
+<path d="M1261 398 L1261 410" fill="none" stroke="#000" stroke-width="1.2" marker-end="url(#ar)"/>
+<rect x="1150" y="410" width="222" height="54" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="1261.0" y="433.1" text-anchor="middle" font-size="14" font-weight="bold">Priority score</text>
+<text x="1261.0" y="450.6" text-anchor="middle" font-size="12">CVSS · EPSS · KEV · actor</text>
+<path d="M1261 464 L1261 476" fill="none" stroke="#000" stroke-width="1.2" marker-end="url(#ar)"/>
+<rect x="1150" y="476" width="222" height="54" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.2"/>
+<text x="1261.0" y="499.1" text-anchor="middle" font-size="14" font-weight="bold">Narrative</text>
+<text x="1261.0" y="516.6" text-anchor="middle" font-size="12">what changed since last cycle</text>
+<path d="M1080 321 L1128 321" fill="none" stroke="#000" stroke-width="2.4" marker-end="url(#ar)"/>
+<rect x="1442" y="156" width="218" height="58" rx="10" fill="#CCFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="1551.0" y="180.9" text-anchor="middle" font-size="15" font-weight="bold">Hourly SITREP</text>
+<text x="1551.0" y="199.6" text-anchor="middle" font-size="13">SOC and CISO audiences</text>
+<path d="M1392 185 L1440 185" fill="none" stroke="#000" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="1442" y="234" width="218" height="58" rx="10" fill="#CCFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="1551.0" y="258.9" text-anchor="middle" font-size="15" font-weight="bold">PostgREST API</text>
+<text x="1551.0" y="277.6" text-anchor="middle" font-size="13">cached context for clients</text>
+<path d="M1392 263 L1440 263" fill="none" stroke="#000" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="1442" y="312" width="218" height="58" rx="10" fill="#CCFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="1551.0" y="336.9" text-anchor="middle" font-size="15" font-weight="bold">Hybrid search</text>
+<text x="1551.0" y="355.6" text-anchor="middle" font-size="13">vector + full-text, RRF</text>
+<path d="M1392 341 L1440 341" fill="none" stroke="#000" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="1442" y="390" width="218" height="58" rx="10" fill="#FFFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="1551.0" y="414.9" text-anchor="middle" font-size="15" font-weight="bold">ODIN voice analyst</text>
+<text x="1551.0" y="433.6" text-anchor="middle" font-size="13">SIP handset, realtime</text>
+<path d="M1392 419 L1440 419" fill="none" stroke="#000" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="1442" y="468" width="218" height="58" rx="10" fill="#FFFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="1551.0" y="492.9" text-anchor="middle" font-size="15" font-weight="bold">Threat landscape report</text>
+<text x="1551.0" y="511.6" text-anchor="middle" font-size="13">weekly PDF</text>
+<path d="M1392 497 L1440 497" fill="none" stroke="#000" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="292" y="574" width="1100" height="44" rx="8" fill="#F5F5F5" stroke="#000" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="842" y="602" text-anchor="middle" font-size="15" fill="#000">Observability:  Prometheus /metrics  ·  Grafana dashboards  ·  OpenTelemetry traces  ·  per-run cost, latency and provenance</text>
+<text x="20" y="678" text-anchor="start" font-size="13" fill="#555">Independent work. Tiger2Go, Tiger-Eye and the ODIN voice bridge are open source: github.com/miketigerblue</text>
+</svg>

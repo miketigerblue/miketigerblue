@@ -18,7 +18,7 @@ The goal is to explore how modern AI systems can operate as infrastructure compo
 
 ### System Architecture
 
-![AI-Assisted Threat Intelligence](ai-pipeline.png)
+![AI-Assisted Threat Intelligence: system architecture](diagrams/system-architecture.png)
 
 
 ### Real-Time Voice Interface
@@ -37,6 +37,8 @@ LAN handset
 ```
 
 This allows analysts to retrieve intelligence using voice interaction rather than dashboards.
+
+![ODIN voice interface](diagrams/odin-voice.png)
 
 Operational Characteristics
 The system runs continuously and processes high-volume security data streams.
@@ -66,17 +68,17 @@ Building conversational interfaces to operational systems
 ## Current Work
 
 ### System Overview
-![Odin Realtime Architecture](odin-realtime-architecture.png)
+![End-to-end pipeline](diagrams/pipeline.png)
 
 *End-to-end system architecture: feeds -> ingestion -> AI enrichment -> clustering -> SITREP generation -> voice interface.*
 
 ### Intelligence Enrichment Pipeline
-![RAG Pipeline](L1-enrichment-pipeline.png)
+![Enrichment pipeline](diagrams/enrichment-pipeline.png)
 
 *LLM-assisted enrichment pipeline converting OSINT feeds into structured CTI.*
 
 ### Analyst Output Pipeline
-![SITREP Pipeline](operational-intelligence-system.png)
+![Analyst output pipeline](diagrams/analyst-output-pipeline.png)
 
 *Clustering and scoring pipeline producing operational SITREPs for analysts and downstream systems.*
 

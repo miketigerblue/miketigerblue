@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" font-family='Helvetica, Arial, "Liberation Sans", sans-serif' font-size="15" fill="#000">
+<defs>
+<filter id="sh" x="-5%" y="-5%" width="115%" height="125%"><feDropShadow dx="1.5" dy="3" stdDeviation="2.2" flood-color="#000" flood-opacity=".28"/></filter>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker>
+<marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1F4FD8"/></marker>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E03A1E"/></marker>
+</defs>
+<rect width="1400" height="700" fill="#fff"/>
+<text x="20" y="36" text-anchor="start" font-size="24" fill="#000" font-weight="bold">Analyst Output Pipeline (Number 2): from enriched signals to the hourly SITREP</text>
+<text x="20" y="60" text-anchor="start" font-size="15" fill="#000">deterministic scoring plus LLM narrative, every hour, with convergence detection across sectors, geographies, actors and TTPs</text>
+<g filter="url(#sh)"><path d="M20 124 v142 a100.0 14 0 0 0 200 0 v-142 a100.0 14 0 0 0 -200 0z" fill="#CCCCFF" stroke="#000" stroke-width="1.6"/><ellipse cx="120.0" cy="124" rx="100.0" ry="14" fill="#CCCCFF" stroke="#000" stroke-width="1.6"/></g>
+<text x="120.0" y="181.4" text-anchor="middle" font-size="13.5" font-weight="bold">Data lake</text>
+<text x="120.0" y="198.3" text-anchor="middle" font-size="11.5">analysis + embeddings</text>
+<text x="120.0" y="215.2" text-anchor="middle" font-size="11.5">cve_enriched · cve_kev</text>
+<text x="120.0" y="232.0" text-anchor="middle" font-size="11.5">epss_daily · IOC feeds</text>
+<path d="M220 195 L280 195" fill="none" stroke="#000" stroke-width="2.4" marker-end="url(#ar)"/>
+<rect x="280" y="150" width="204" height="90" rx="10" fill="#FFFFFF" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="382.0" y="182.8" text-anchor="middle" font-size="13.5" font-weight="bold">Extraction</text>
+<text x="382.0" y="199.7" text-anchor="middle" font-size="11.5">enriched rows become</text>
+<text x="382.0" y="216.6" text-anchor="middle" font-size="11.5">schema-validated intel objects</text>
+<path d="M484 195 L502 195" fill="none" stroke="#000" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="502" y="150" width="204" height="90" rx="10" fill="#FFFFFF" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="604.0" y="182.8" text-anchor="middle" font-size="13.5" font-weight="bold">Embedding cache</text>
+<text x="604.0" y="199.7" text-anchor="middle" font-size="11.5">vectors reused from pgvector,</text>
+<text x="604.0" y="216.6" text-anchor="middle" font-size="11.5">never recomputed</text>
+<path d="M706 195 L724 195" fill="none" stroke="#000" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="724" y="150" width="204" height="90" rx="10" fill="#CCFFFF" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="826.0" y="182.8" text-anchor="middle" font-size="13.5" font-weight="bold">Hybrid clustering</text>
+<text x="826.0" y="199.7" text-anchor="middle" font-size="11.5">cosine similarity plus</text>
+<text x="826.0" y="216.6" text-anchor="middle" font-size="11.5">shared CVE or actor links</text>
+<path d="M928 195 L946 195" fill="none" stroke="#000" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="946" y="150" width="204" height="90" rx="10" fill="#CCFFFF" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="1048.0" y="182.8" text-anchor="middle" font-size="13.5" font-weight="bold">Priority score</text>
+<text x="1048.0" y="199.7" text-anchor="middle" font-size="11.5">CVSS · EPSS · KEV status</text>
+<text x="1048.0" y="216.6" text-anchor="middle" font-size="11.5">· actor behaviour</text>
+<path d="M1150 195 L1168 195" fill="none" stroke="#000" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="1168" y="150" width="204" height="90" rx="10" fill="#FFCCCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="1270.0" y="182.8" text-anchor="middle" font-size="13.5" font-weight="bold">Narrative</text>
+<text x="1270.0" y="199.7" text-anchor="middle" font-size="11.5">executive summary of what</text>
+<text x="1270.0" y="216.6" text-anchor="middle" font-size="11.5">changed since the last cycle</text>
+<rect x="280" y="280" width="1092" height="120" rx="14" fill="#FFFDF0" stroke="#E8A13A" stroke-width="3"/>
+<text x="300" y="306" text-anchor="start" font-size="15" fill="#000" font-weight="bold">Convergence detection</text>
+<text x="300" y="330" text-anchor="start" font-size="13" fill="#000">Facets per cluster per window: sector × geography × actor × TTP. When several dimensions light up together the alert scores higher.</text>
+<text x="300" y="352" text-anchor="start" font-size="12.5" fill="#333">Tables: t2_convergence_facets (dimension, value, source_count) and t2_convergence_alerts (sector, geography, dimensions_hit, convergence_score).</text>
+<text x="300" y="374" text-anchor="start" font-size="12.5" fill="#333">EPSS daily features track quantiles, KEV overlap and CVEs that crossed 0.2, 0.5 and 0.7, so movers get surfaced as well as new entries.</text>
+<path d="M1168 240 L1168 278" fill="none" stroke="#000" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="20" y="310" width="200" height="90" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="1.3" filter="url(#sh)"/>
+<text x="120.0" y="343.8" text-anchor="middle" font-size="12.5" font-weight="bold">Every run recorded</text>
+<text x="120.0" y="359.4" text-anchor="middle" font-size="10.5">t2_runs: job, duration,</text>
+<text x="120.0" y="375.0" text-anchor="middle" font-size="10.5">items in and out, tokens, status</text>
+<rect x="20" y="430" width="1352" height="180" rx="14" fill="#F4FFF4" stroke="#57C84D" stroke-width="3"/>
+<text x="40" y="456" text-anchor="start" font-size="15" fill="#000" font-weight="bold">Outputs</text>
+<rect x="40" y="470" width="250" height="116" rx="10" fill="#CCFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="165.0" y="515.9" text-anchor="middle" font-size="13.5" font-weight="bold">Hourly SITREP</text>
+<text x="165.0" y="532.7" text-anchor="middle" font-size="11.5">t2_hourly_sitrep, JSON report</text>
+<text x="165.0" y="549.6" text-anchor="middle" font-size="11.5">per window, versioned pipeline</text>
+<rect x="306" y="470" width="250" height="116" rx="10" fill="#CCFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="431.0" y="515.9" text-anchor="middle" font-size="13.5" font-weight="bold">HTML reports</text>
+<text x="431.0" y="532.7" text-anchor="middle" font-size="11.5">t2_html_reports: daily, weekly,</text>
+<text x="431.0" y="549.6" text-anchor="middle" font-size="11.5">threat landscape report</text>
+<rect x="572" y="470" width="250" height="116" rx="10" fill="#FFFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="697.0" y="515.9" text-anchor="middle" font-size="13.5" font-weight="bold">Watchlist matches</text>
+<text x="697.0" y="532.7" text-anchor="middle" font-size="11.5">your stack terms vs every analysis</text>
+<text x="697.0" y="549.6" text-anchor="middle" font-size="11.5">watchlist_matches, by severity</text>
+<rect x="838" y="470" width="250" height="116" rx="10" fill="#FFFFCC" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="963.0" y="515.9" text-anchor="middle" font-size="13.5" font-weight="bold">ODIN voice analyst</text>
+<text x="963.0" y="532.7" text-anchor="middle" font-size="11.5">reads the SITREP, answers</text>
+<text x="963.0" y="549.6" text-anchor="middle" font-size="11.5">questions over the lake</text>
+<rect x="1104" y="470" width="250" height="116" rx="10" fill="#FFFFFF" stroke="#000" stroke-width="1.6" filter="url(#sh)"/>
+<text x="1229.0" y="515.9" text-anchor="middle" font-size="13.5" font-weight="bold">PostgREST and search</text>
+<text x="1229.0" y="532.7" text-anchor="middle" font-size="11.5">structured and semantic access</text>
+<text x="1229.0" y="549.6" text-anchor="middle" font-size="11.5">for dashboards and agents</text>
+<path d="M1168 400 L1168 428" fill="none" stroke="#000" stroke-width="2" marker-end="url(#ar)"/>
+<text x="20" y="650" text-anchor="start" font-size="13" fill="#000">Audiences: SOC for the hourly cycle and watchlist hits, CISO for the daily and weekly narrative.</text>
+<text x="20" y="678" text-anchor="start" font-size="12.5" fill="#555">Independent research, outside my employment. Stage descriptions from the project README; table names from the live schema.</text>
+</svg>

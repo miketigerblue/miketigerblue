@@ -16,6 +16,16 @@ The system continuously ingests security feeds, enriches signals using AI analys
 
 The goal is to explore how modern AI systems can operate as infrastructure components within real-world operational pipelines.
 
+### Evidence from production
+
+A measured week from my independent threat intelligence platform: **1,982 analysis records across 271 completed recorded runs**, with model ID, prompt version and input hash present on every analysis in the window.
+
+[![Production enrichment, 7–13 October 2026 UTC: 1,982 analyses, 271 completed recorded runs and 4.51-second p95 recorded LLM-call latency](diagrams/production-enrichment-2026-10-07-13.png)](evidence/2026-10-07-13-enrichment.md)
+
+**[Read the case study and measurement definitions](evidence/2026-10-07-13-enrichment.md)** · [Aggregate data](evidence/2026-10-07-13-enrichment.json)
+
+This is a dated snapshot of processed work and recorded metadata. LLM-call latency is measured separately from end-to-end delivery; the figures do not establish uptime or analysis accuracy.
+
 ### System Architecture
 
 ![AI-Assisted Threat Intelligence: system architecture](diagrams/system-architecture.png)

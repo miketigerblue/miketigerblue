@@ -1,0 +1,88 @@
+{
+  "window_start_utc": "2026-10-07T00:00:00Z",
+  "window_end_exclusive_utc": "2026-10-14T00:00:00Z",
+  "retrieved_date": "2026-10-14",
+  "analysis": {
+    "analyses_in_window": 1982,
+    "window_latency_samples": 1982,
+    "window_llm_p50_ms": 3119,
+    "window_llm_p95_ms": 4508.549999999998,
+    "window_with_provenance": 1982
+  },
+  "runs": {
+    "batch_items": 1982,
+    "failed_enrichment_attempts": 0,
+    "finished_runs": 271,
+    "first_run": "2026-10-07T00:34:41.502564+00:00",
+    "last_run": "2026-10-13T23:49:15.313774+00:00",
+    "recorded_input_tokens": 6417720,
+    "recorded_output_tokens": 909931,
+    "recorded_runs": 271,
+    "skipped_items": 0,
+    "successful_enrichment_attempts": 1982
+  },
+  "daily": [
+    {
+      "analyses": 134,
+      "day": "2026-10-07",
+      "latency_samples": 134,
+      "llm_p50_ms": 3343.5,
+      "llm_p95_ms": 5309.649999999999,
+      "with_provenance": 134
+    },
+    {
+      "analyses": 120,
+      "day": "2026-10-08",
+      "latency_samples": 120,
+      "llm_p50_ms": 4025.5,
+      "llm_p95_ms": 6158.45,
+      "with_provenance": 120
+    },
+    {
+      "analyses": 103,
+      "day": "2026-10-09",
+      "latency_samples": 103,
+      "llm_p50_ms": 3405,
+      "llm_p95_ms": 5519.3,
+      "with_provenance": 103
+    },
+    {
+      "analyses": 11,
+      "day": "2026-10-10",
+      "latency_samples": 11,
+      "llm_p50_ms": 3147,
+      "llm_p95_ms": 5871.5,
+      "with_provenance": 11
+    },
+    {
+      "analyses": 3,
+      "day": "2026-10-11",
+      "latency_samples": 3,
+      "llm_p50_ms": 5003,
+      "llm_p95_ms": 5571.8,
+      "with_provenance": 3
+    },
+    {
+      "analyses": 96,
+      "day": "2026-10-12",
+      "latency_samples": 96,
+      "llm_p50_ms": 3317.5,
+      "llm_p95_ms": 5425,
+      "with_provenance": 96
+    },
+    {
+      "analyses": 1515,
+      "day": "2026-10-13",
+      "latency_samples": 1515,
+      "llm_p50_ms": 3069,
+      "llm_p95_ms": 3811.7999999999993,
+      "with_provenance": 1515
+    }
+  ],
+  "definitions": {
+    "provenance": "Non-null model_id, prompt_version and input_hash on retained analysis rows.",
+    "latency": "Recorded LLM-call latency, not ingestion-to-publication latency.",
+    "runs": "Recorded enrichment cycles that did work; not an uptime measurement.",
+    "cohort": "Rows currently retained in analysis, selected by analysed_at. Counts do not establish unique incidents or AI accuracy."
+  }
+}

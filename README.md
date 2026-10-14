@@ -4,7 +4,7 @@ Engineering leader and former CTO working across **Linux, networks, edge infrast
 
 Alongside that work, I build an independent threat intelligence platform. The public projects below cover ingestion, structured enrichment and a SIP voice interface; the case studies show the decisions, operational problems and measurements behind the system.
 
-[LinkedIn](https://www.linkedin.com/in/tigerblue) · [Blog](https://tigerblue.tech) · [Email](mailto:mike@tigerblue.tech)
+[LinkedIn](https://www.linkedin.com/in/tigerblue) · [Email](mailto:mike@tigerblue.tech)
 
 > These are independent projects built outside my employment. They do not represent the systems of any current or former employer.
 
@@ -182,4 +182,3 @@ Today I work at **Motion Applied**, engineering secure rail connectivity systems
 - **LinkedIn:** [linkedin.com/in/tigerblue](https://www.linkedin.com/in/tigerblue)
 - **X:** [@LoveFlowState](https://x.com/loveflowstate)
 - **Email:** mike@tigerblue.tech
-- **Blog:** [tigerblue.tech](https://tigerblue.tech/blog)

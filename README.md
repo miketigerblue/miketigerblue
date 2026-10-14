@@ -1,227 +1,68 @@
 # Mike Harris · miketigerblue
 
-[![Profile Views](https://komarev.com/ghpvc/?username=miketigerblue&style=flat-square&color=blue)](https://github.com/miketigerblue)
-[![GitHub followers](https://img.shields.io/github/followers/miketigerblue?style=flat-square&label=Followers)](https://github.com/miketigerblue?tab=followers)
-[![Blog](https://img.shields.io/badge/Blog-tigerblue.tech-informational?style=flat-square&logo=ghost)](https://tigerblue.tech)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-tigerblue-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/tigerblue)
+Engineering leader and former CTO working across **Linux, networks, edge infrastructure and device trust**. My career spans Bermuda's early internet, carrier networks and certificate-authority infrastructure, through to secure connectivity for rail fleets at Motion Applied.
 
+Alongside that work, I build an independent threat intelligence platform. The public projects below cover ingestion, structured enrichment and a SIP voice interface; the case studies show the decisions, operational problems and measurements behind the system.
 
-## Building an AI-Assisted Threat Intelligence Runtime
+[LinkedIn](https://www.linkedin.com/in/tigerblue) · [Blog](https://tigerblue.tech/blog) · [Email](mailto:mike@tigerblue.tech)
 
-Modern threat intelligence suffers from a signal-to-noise problem. Thousands of security events, vulnerabilities, and advisories appear daily across global sources, but analysts must transform these raw signals into actionable intelligence.
+> These are independent projects built outside my employment. They do not represent the systems of any current or former employer.
 
-To explore this problem, I built a distributed system that treats threat intelligence as a signal-processing pipeline.
+## Engineering case studies
 
-The system continuously ingests security feeds, enriches signals using AI analysis, clusters related events, and produces operational threat briefings that can be consumed by humans or automation.
+| Case study | What it demonstrates |
+|---|---|
+| **[Migrating a threat intelligence lake without losing its history](evidence/2026-05-lake-migration.md)** | Archive and restore design, compatibility problems, data-quality fixes, and honest handling of missing historical metadata. Migration: May 2026. |
+| **[AI enrichment, measured in production](evidence/2026-10-07-13-enrichment.md)** | A dated processing snapshot with workload distribution, LLM-call latency and provenance-field coverage. Observation: 7–13 October 2026 UTC. |
 
-The goal is to explore how modern AI systems can operate as infrastructure components within real-world operational pipelines.
+## Evidence from production
 
-### Evidence from production
-
-A measured week from my independent threat intelligence platform: **1,982 analysis records across 271 completed recorded runs**, with model ID, prompt version and input hash present on every analysis in the window.
+A measured week from my independent platform: **1,982 analysis records across 271 completed recorded runs**, with model ID, prompt version and input hash present on every analysis in the window.
 
 [![Production enrichment, 7–13 October 2026 UTC: 1,982 analyses, 271 completed recorded runs and 4.51-second p95 recorded LLM-call latency](diagrams/production-enrichment-2026-10-07-13.png)](evidence/2026-10-07-13-enrichment.md)
 
-**[Read the case study and measurement definitions](evidence/2026-10-07-13-enrichment.md)** · [Aggregate data](evidence/2026-10-07-13-enrichment.json)
+[Measurement definitions and case study](evidence/2026-10-07-13-enrichment.md) · [Aggregate data](evidence/2026-10-07-13-enrichment.json)
 
-This is a dated snapshot of processed work and recorded metadata. LLM-call latency is measured separately from end-to-end delivery; the figures do not establish uptime or analysis accuracy.
+The figures describe recorded work and metadata. LLM-call latency is separate from end-to-end delivery; the snapshot does not establish uptime, maximum capacity or analysis accuracy.
 
-### System Architecture
+## Public projects
 
-![AI-Assisted Threat Intelligence: system architecture](diagrams/system-architecture.png)
-
-
-### Real-Time Voice Interface
-
-One of the system’s experimental interfaces is ODIN, a voice-driven SOC analyst.
-A SIP handset connects to an AI system capable of answering security questions and delivering threat briefings in real time.
-
-## Architecture:
-
-```
-LAN handset
-→ Asterisk PBX
-→ Twilio media bridge
-→ WebSocket streaming
-→ OpenAI realtime models
-```
-
-This allows analysts to retrieve intelligence using voice interaction rather than dashboards.
-
-![ODIN voice interface](diagrams/odin-voice.png)
-
-Operational Characteristics
-The system runs continuously and processes high-volume security data streams.
-
-### Operational metrics (as of 2 October 2026):
-
-- In continuous operation since September 2025
-- 19,000+ AI-enriched threat analyses, each with a stored embedding
-- 400,000+ CVEs tracked and enriched across NVD, CISA KEV, OSV and GHSA, with 1.2M recorded state changes
-- 199M EPSS daily score rows ingested
-- 2,200+ threat actors and 540+ malware families canonicalised
-- Hourly automated SITREPs and convergence alerts
-
-The stack currently runs across Fly.io infrastructure with PostgreSQL, vector search, and microservices written in Rust, Python, Go, and TypeScript.
-
-### Key Ideas Explored
-
-Treating intelligence as a signal-processing problem
-Combining deterministic scoring with LLM analysis
-Using vector search to cluster related threat signals
-Building conversational interfaces to operational systems
-
-
-> ### Note 
->    The systems and experiments described here are independent research and personal projects built outside of my employment. They do not represent the work or systems of any current or former employer.
-
-## Current Work
-
-### System Overview
-![End-to-end pipeline](diagrams/pipeline.png)
-
-*End-to-end system architecture: feeds -> ingestion -> AI enrichment -> clustering -> SITREP generation -> voice interface.*
-
-### Intelligence Enrichment Pipeline
-![Enrichment pipeline](diagrams/enrichment-pipeline.png)
-
-*LLM-assisted enrichment pipeline converting OSINT feeds into structured CTI.*
-
-### Analyst Output Pipeline
-![Analyst output pipeline](diagrams/analyst-output-pipeline.png)
-
-*Clustering and scoring pipeline producing operational SITREPs for analysts and downstream systems.*
-
-
-I am building a vertically integrated cyber threat-intelligence pipeline designed to ingest raw security signals, enrich them with AI-assisted analysis, and deliver actionable intelligence outputs.
-
-The system treats threat intelligence as a signal-processing problem: ingest authoritative sources, enrich and cluster signals, then deliver intelligence outputs analysts can act on.
-
-### The stack includes:
-
-- **Tigerfetch (Rust)**: ingestion service collecting security feeds such as NCSC, CISA, JPCERT, MISP, Unit 42, Exploit-DB, and others into a PostgreSQL-backed OSINT platform.
-- **L1 Cyber Analyst**: AI enrichment pipeline using RAG + LLM analysis to produce structured threat assessments including CVEs, TTPs, actors, IOCs, and recommended actions.
-- **Number 2**: clustering engine that groups enriched signals and generates hourly SITREPs using deterministic scoring based on CVSS, EPSS, KEV, and actor behaviour.
-- **Project Odin**: voice interface to the threat-intelligence pipeline, a SIP handset connected to an AI SOC analyst capable of delivering SITREPs and performing semantic searches in real time.
-- **Tiger2Go**: open-source Go implementation of the ingestion layer designed for high-volume concurrent OSINT ingestion.
-- **Tiger-Eye**: open-source pgvector-native enrichment service — the public reference implementation of the L1 Cyber Analyst pattern. Reads OSINT feed entries from the Tigerfetch / Tiger2Go database, runs RAG-augmented LLM analysis, and stores HNSW-indexed embeddings alongside structured analyses in Postgres.
-
-### Operational metrics (as of 2 October 2026):
-
-- **In continuous operation** since September 2025
-- **19,000+** AI-enriched threat analyses
-- **400,000+** CVEs tracked across NVD, CISA KEV, OSV and GHSA
-- **199M** EPSS daily score rows ingested
-- **2,200+** threat actors and **540+** malware families canonicalised
-- **Hourly** automated SITREPs
-
----
-
-## Active Projects
-
-| Project | Stack | Status |
+| Project | Engineering focus | Read further |
 |---|---|---|
-| **OSINT Platform + L1** | Python · PostgreSQL · ChromaDB · FastAPI · TypeScript · Fly.io | Active |
-| [**Project Odin**](https://github.com/miketigerblue/asterisk-twilio-pbx) | Asterisk · Twilio · Node.js · OpenAI Realtime · PostgREST · Fly.io | Active |
-| **Number 2** | Python · PostgreSQL · pgvector · OpenAI · PostgREST · Fly.io | Active |
-| [**Tiger2Go**](https://github.com/miketigerblue/tiger2go) | Go · PostgreSQL · pgx · Prometheus · goose | Active |
-| [**Tiger-Eye**](https://github.com/miketigerblue/tiger-eye) | Python · PostgreSQL · pgvector (HNSW) · OpenAI · LangChain · RAG | Active |
+| [**Tiger2Go**](https://github.com/miketigerblue/tiger2go) | Go ingestion service: concurrent workers, retries, normalisation, PostgreSQL migrations and operational metrics. | [System design](https://github.com/miketigerblue/tiger2go/blob/main/docs/SYSTEM_DESIGN.md) |
+| [**Tiger-Eye**](https://github.com/miketigerblue/tiger-eye) | Python enrichment service: structured analysis, pgvector retrieval, bounded concurrency and execution metadata. | [Architecture and failure modes](https://github.com/miketigerblue/tiger-eye/blob/main/SYSTEM_DESIGN.md) |
+| [**ODIN**](https://github.com/miketigerblue/asterisk-twilio-pbx) | Asterisk/SIP and a streaming voice bridge: audio pacing, interruptions, backpressure and tool-backed intelligence retrieval. | [Operational runbook](https://github.com/miketigerblue/asterisk-twilio-pbx/blob/main/RUNBOOK.md) |
 
-### OSINT Platform + L1
+### How the platform evolved
 
-Tigerfetch ingests raw security feeds into a PostgreSQL-backed OSINT platform. L1 Cyber Analyst enriches those signals using RAG + LLM workflows to produce structured assessments covering CVEs, TTPs, actors, IOCs, severity, confidence, and recommended actions.
+The original platform used a Rust ingestor and a Fly.io-hosted lake, with L1 analysis and Python-based Number 2 reporting. In May 2026 I archived that lake and restored its threat intelligence data into a separate `legacy` schema alongside the newer Go-based Tiger2Go and Python Tiger-Eye stack. The migration record identifies T2 as the Go successor to Number 2.
 
-The goal is to turn high-volume, noisy OSINT into operational CTI that can be searched, clustered, narrated, and consumed downstream by analysts and automation.
+That history matters when reading older diagrams and reports. The [migration case study](evidence/2026-05-lake-migration.md) distinguishes the old and new systems, and the repository documentation describes each public component. ODIN's documented Raspberry Pi/Fly.io voice deployment is separate from the retired Fly.io database.
 
-Current access layers include a FastAPI API, PostgREST services, semantic search over ChromaDB, and downstream reporting and export paths.
+[Historical ODIN report: 26 February–4 March 2026](ODIN-TLR-26-Feb--04-Mar-2026.pdf)
 
-### [Project Odin](https://github.com/miketigerblue/asterisk-twilio-pbx)
+## Career Background
 
-A real-time voice interface for cyber threat intelligence.
+My career began in the early internet era.
 
-A human operator picks up a LAN phone, dials an extension, and reaches **ODIN**, an AI-powered SOC analyst capable of delivering live SITREPs, performing semantic searches, and retrieving vulnerability intelligence by voice.
+I started in **BerMUG** in the late 1980s running a FirstClass BBS federated with global Mac communities.
 
-The architecture separates into two planes.
+In 1994 I helped build Bermuda's first commercial ISP, **Internet Bermuda Ltd**, serving as .BM TLD hostmaster and deploying one of the island's first secure online credit-card systems.
 
-**Voice / SIP plane (latency-critical)**
+Later I became CTO of **Quantum Communications**, launching Bermuda's first metro-Ethernet service, CLEC interconnection, and a national IP/MPLS backbone.
 
-LAN handsets -> Asterisk PBX -> Twilio -> WebSocket bridge -> OpenAI Realtime API.
+My telecom background also includes work with **Cable & Wireless** and **Logic**, extending that experience across Bermuda's carrier and connectivity landscape.
 
-The bridge streams G.711 mu-law audio with 20 ms frame pacing and supports barge-in detection, backpressure handling, and gated tool calls.
+At **QuoVadis** I designed and delivered a Tier III data centre supporting PKI certificate-authority infrastructure including HSM-backed systems.
 
-**Threat-intelligence plane**
+I later founded **OnXis**, a security consultancy delivering incident response, digital forensics, and resilience engineering for governments and enterprises.
 
-RSS feeds + NVD + CISA KEV + EPSS -> ingestion -> enrichment -> clustering -> SITREP generation.
+More recently I worked at **deltaflare**, building DevSecOps pipelines and hardened Linux systems for industrial IoT platforms.
 
-Context is pre-cached to minimise first-audio latency.
+Today I work at **Motion Applied**, engineering secure rail connectivity systems and supporting compliance work across ISO 27001, ISO 9001, ISO 14001, NIS2, and IEC 62443 environments.
 
-The system runs across a Raspberry Pi PBX and Fly.io cloud services.
-
-See the full implementation at [**github.com/miketigerblue/asterisk-twilio-pbx**](https://github.com/miketigerblue/asterisk-twilio-pbx).
-
-### Number 2
-
-Automated SITREP pipeline producing hourly cyber threat-intelligence reports.
-
-Pipeline stages:
-
-- **Extraction**: normalises enriched data into schema-validated intelligence objects.
-- **Embedding cache**: vectors stored in pgvector to avoid recomputation.
-- **Hybrid clustering**: combines cosine similarity with deterministic rules based on shared CVEs or actors.
-- **Scoring**: priority index built from CVSS, EPSS, KEV status, and threat actor behaviour.
-- **Narrative generation**: produces concise executive summaries highlighting changes from previous reporting cycles.
-
-Additional capabilities include convergence detection across sector x geography x actor x TTP signals and automated reporting for SOC and CISO audiences.
-
-See the sample report: [**ODIN Threat Landscape Report**](ODIN-TLR-26-Feb--04-Mar-2026.pdf)
-
-### [Tiger2Go](https://github.com/miketigerblue/tiger2go)
-
-Open-source Go port of the Rust ingestion service.
-
-Designed for operational ingestion workloads where concurrency, retries, idempotency, and long-running reliability matter more than memory ownership semantics.
-
-Capabilities include:
-
-- concurrent RSS ingestion
-- NVD CVE ingestion
-- CISA KEV updates
-- EPSS daily score ingestion (~300k records/day)
-
-Operational tooling includes Prometheus metrics and health endpoints.
-
-### [Tiger-Eye](https://github.com/miketigerblue/tiger-eye)
-
-Open-source pgvector-native enrichment service — the public reference implementation of the L1 Cyber Analyst pattern that runs internally in production.
-
-Tiger-Eye sits in the middle of the tiger ecosystem and pairs directly with **Tiger-Fetch** (the Rust private ingestor) or **Tiger2Go** (its open-source Go port):
-
-```
-┌──────────────────────────────┐        ┌──────────────────────────────────────┐
-│   Tiger-Fetch / Tiger2Go     │        │             Tiger-Eye                │
-│   (Rust / Go ingestor)       │  ───▶  │      (Python enrichment service)     │
-├──────────────────────────────┤        ├──────────────────────────────────────┤
-│  RSS / Atom feeds            │        │  RAG-augmented LLM analysis          │
-│  NVD JSON / CISA KEV / EPSS  │        │  CVEs · TTPs · actors · IOCs         │
-│  Single-binary, observable   │        │  HNSW vector index in pgvector       │
-│                              │        │  CVSS / EPSS / KEV joins             │
-│         shared PostgreSQL ───┼────────┼─── shared PostgreSQL                 │
-└──────────────────────────────┘        └──────────────────────────────────────┘
-```
-
-The two services communicate exclusively through the shared Postgres database — Tiger-Fetch / Tiger2Go writes raw entries; Tiger-Eye reads, enriches, and writes structured analyses + embeddings back. Either ingestor (Rust or Go) is a drop-in for the other; Tiger-Eye doesn't care which one populated the upstream tables.
-
-Capabilities include:
-
-- pgvector-native vector storage with HNSW indexing
-- structured analysis schema with CVSS / EPSS / KEV joins
-- RAG context window built from prior enrichments
-- batch + streaming enrichment modes
-- CI-tested pipeline with GitHub Actions
-
-This is the OSS reference architecture for "ingest → enrich" in the tiger ecosystem. The private L1 Cyber Analyst pipeline implements the same pattern with additional production-specific scoring and clustering logic that Number 2 then consumes downstream.
-
----
+<details>
+<summary>Technical background and tools</summary>
 
 ## Tech Stack
 
@@ -334,35 +175,7 @@ This is the OSS reference architecture for "ingest → enrich" in the tiger ecos
 ![GDPR](https://img.shields.io/badge/GDPR-data%20protection-blue?style=flat-square)
 ![PCI DSS](https://img.shields.io/badge/PCI%20DSS-payment%20security-blue?style=flat-square)
 
----
-
-## Philosophy
-
-I treat intelligence and telemetry systems as signal-processing pipelines: ingest authoritative sources, enrich signals with AI analysis, cluster patterns, and deliver operational outputs
-
-
-
-## Career Background
-
-My career began in the early internet era.
-
-I started in **BerMUG** in the late 1980s running a FirstClass BBS federated with global Mac communities.
-
-In 1994 I helped build Bermuda's first commercial ISP, **Internet Bermuda Ltd**, serving as .BM TLD hostmaster and deploying one of the island's first secure online credit-card systems.
-
-Later I became CTO of **Quantum Communications**, launching Bermuda's first metro-Ethernet service, CLEC interconnection, and a national IP/MPLS backbone.
-
-My telecom background also includes work with **Cable & Wireless** and **Logic**, extending that experience across Bermuda's carrier and connectivity landscape.
-
-At **QuoVadis** I designed and delivered a Tier III data centre supporting PKI certificate-authority infrastructure including HSM-backed systems.
-
-I later founded **OnXis**, a security consultancy delivering incident response, digital forensics, and resilience engineering for governments and enterprises.
-
-More recently I worked at **deltaflare**, building DevSecOps pipelines and hardened Linux systems for industrial IoT platforms.
-
-Today I work at **Motion Applied**, engineering secure rail connectivity systems and supporting compliance work across ISO 27001, ISO 9001, ISO 14001, NIS2, and IEC 62443 environments.
-
----
+</details>
 
 ## Get in Touch
 

@@ -1,0 +1,43 @@
+1
+00:00:03,860 --> 00:00:08,400
+ODIN: The CVSS base score is a full 10, so it's extremely severe.
+
+2
+00:00:08,600 --> 00:00:10,900
+ODIN: It's known to have been used in ransomware campaigns,
+
+3
+00:00:10,900 --> 00:00:16,980
+ODIN: and it's listed in the CISA Known Exploited Vulnerabilities catalog since April 2024.
+
+4
+00:00:16,980 --> 00:00:22,540
+ODIN: The recommended action is to apply mitigations or enable threat prevention IDs from the vendor.
+
+5
+00:00:22,540 --> 00:00:29,900
+MIKE: You mentioned CISA, KEV and EPSS. Did you mention them?
+
+6
+00:00:29,900 --> 00:00:31,600
+ODIN: Yes, I mentioned both.
+
+7
+00:00:31,600 --> 00:00:39,660
+ODIN: This CVE is in the CISA Known Exploited Vulnerabilities, KEV catalog, added back in April 2024.
+
+8
+00:00:39,790 --> 00:00:45,430
+ODIN: The EPSS score is also very high, about 0.943, as of the last check,
+
+9
+00:00:45,550 --> 00:00:48,820
+ODIN: meaning it's got a very high likelihood of being exploited.
+
+10
+00:00:49,080 --> 00:00:52,810
+ODIN: Both indicators confirm it's a top priority vulnerability.
+
+11
+00:00:52,890 --> 00:00:55,100
+ODIN: Let me know if you need more context or action steps.

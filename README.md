@@ -8,6 +8,14 @@ Alongside that work, I build an independent threat intelligence platform. The pu
 
 > These are independent projects built outside my employment. They do not represent the systems of any current or former employer.
 
+## ODIN — early prototype demo
+
+A one-minute excerpt from an early handset test of my independent threat-intelligence voice interface. **Early prototype:** historical responses, retained as an engineering demonstration.
+
+[![ODIN — early prototype. Silent captioned preview of a handset conversation about CVE-2024-3400, KEV and EPSS.](media/odin-early-prototype.gif)](https://github.com/miketigerblue/miketigerblue/blob/main/media/odin-early-prototype.mp4)
+
+The captioned preview is silent. **[Video with audio (MP4)](https://github.com/miketigerblue/miketigerblue/raw/refs/heads/main/media/odin-early-prototype.mp4)** · [Transcript and prototype context](evidence/odin-early-prototype.md) · [ODIN code and runbook](https://github.com/miketigerblue/asterisk-twilio-pbx)
+
 ## Engineering case studies
 
 | Case study | What it demonstrates |

@@ -2,7 +2,7 @@
 
 Engineering leader and former CTO working across **Linux, networks, edge infrastructure and device trust**. My career spans Bermuda's early internet, carrier networks and certificate-authority infrastructure, through to secure connectivity for rail fleets at Motion Applied.
 
-Alongside that work, I build an independent threat intelligence platform. The public projects below cover ingestion, structured enrichment and a SIP voice interface; the case studies show the decisions, operational problems and measurements behind the system.
+Alongside that work, I build an independent threat intelligence platform and practical AI integrations. The public projects below cover ingestion, structured enrichment, a SIP voice interface and a Proton Mail Bridge MCP server. The case studies show the decisions, operational problems and measurements behind the threat intelligence platform.
 
 [LinkedIn](https://www.linkedin.com/in/tigerblue) · [Email](mailto:mike@tigerblue.tech)
 
@@ -15,6 +15,16 @@ A one-minute excerpt from an early handset test of my independent threat-intelli
 [![ODIN — early prototype. Silent captioned preview of a handset conversation about CVE-2024-3400, KEV and EPSS.](media/odin-early-prototype.gif)](https://github.com/miketigerblue/miketigerblue/blob/main/media/odin-early-prototype.mp4)
 
 The captioned preview is silent. **[Video with audio (MP4)](https://github.com/miketigerblue/miketigerblue/raw/refs/heads/main/media/odin-early-prototype.mp4)** · [Transcript and prototype context](evidence/odin-early-prototype.md) · [ODIN code and runbook](https://github.com/miketigerblue/asterisk-twilio-pbx)
+
+## Proton Mail Bridge MCP
+
+**Email tools for Claude and other MCP clients.** A Python MCP server for searching, reading, drafting and organising email through Proton Mail Bridge.
+
+The connection to Bridge uses local IMAP/SMTP, with certificate pinning, macOS Keychain credentials and pooled connections. The project includes installation guidance, troubleshooting and a documented threat model.
+
+[![GitHub stars](https://img.shields.io/github/stars/miketigerblue/proton-bridge-mcp?style=flat-square&label=stars)](https://github.com/miketigerblue/proton-bridge-mcp/stargazers) [![GitHub forks](https://img.shields.io/github/forks/miketigerblue/proton-bridge-mcp?style=flat-square&label=forks)](https://github.com/miketigerblue/proton-bridge-mcp/forks)
+
+[**Repository and setup**](https://github.com/miketigerblue/proton-bridge-mcp) · [Threat model](https://github.com/miketigerblue/proton-bridge-mcp#threat-model)
 
 ## Engineering case studies
 
@@ -40,6 +50,7 @@ The figures describe recorded work and metadata. LLM-call latency is separate fr
 | [**Tiger2Go**](https://github.com/miketigerblue/tiger2go) | Go ingestion service: concurrent workers, retries, normalisation, PostgreSQL migrations and operational metrics. | [System design](https://github.com/miketigerblue/tiger2go/blob/main/docs/SYSTEM_DESIGN.md) |
 | [**Tiger-Eye**](https://github.com/miketigerblue/tiger-eye) | Python enrichment service: structured analysis, pgvector retrieval, bounded concurrency and execution metadata. | [Architecture and failure modes](https://github.com/miketigerblue/tiger-eye/blob/main/SYSTEM_DESIGN.md) |
 | [**ODIN**](https://github.com/miketigerblue/asterisk-twilio-pbx) | Asterisk/SIP and a streaming voice bridge: audio pacing, interruptions, backpressure and tool-backed intelligence retrieval. | [Operational runbook](https://github.com/miketigerblue/asterisk-twilio-pbx/blob/main/RUNBOOK.md) |
+| [**Proton Mail Bridge MCP**](https://github.com/miketigerblue/proton-bridge-mcp) | Python MCP server: local IMAP/SMTP integration, certificate pinning, Keychain credentials and pooled connections. | [Setup and threat model](https://github.com/miketigerblue/proton-bridge-mcp#threat-model) |
 
 ### How the platform evolved
 

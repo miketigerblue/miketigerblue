@@ -22,7 +22,7 @@ The captioned preview is silent. **[Video with audio (MP4)](https://github.com/m
 
 The connection to Bridge uses local IMAP/SMTP, with certificate pinning, macOS Keychain credentials and pooled connections. The project includes installation guidance, troubleshooting and a documented threat model.
 
-[![GitHub stars](https://img.shields.io/github/stars/miketigerblue/proton-bridge-mcp?style=flat-square&label=stars)](https://github.com/miketigerblue/proton-bridge-mcp/stargazers) [![GitHub forks](https://img.shields.io/github/forks/miketigerblue/proton-bridge-mcp?style=flat-square&label=forks)](https://github.com/miketigerblue/proton-bridge-mcp/forks)
+Community interest: **[8 stars](https://github.com/miketigerblue/proton-bridge-mcp/stargazers)** · **[4 forks](https://github.com/miketigerblue/proton-bridge-mcp/forks)**, as of 17 October 2026.
 
 [**Repository and setup**](https://github.com/miketigerblue/proton-bridge-mcp) · [Threat model](https://github.com/miketigerblue/proton-bridge-mcp#threat-model)
 
